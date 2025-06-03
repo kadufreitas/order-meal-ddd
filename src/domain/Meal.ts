@@ -1,4 +1,4 @@
-import type { User, WithCurrentUser } from '../user';
+import type { User, WithCurrentUser } from './User';
 
 export type Meal = {
   id: string;

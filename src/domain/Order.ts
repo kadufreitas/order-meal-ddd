@@ -1,5 +1,5 @@
-import type { Meal } from '../meal';
-import type { User, WithCurrentUser } from '../user';
+import type { Meal } from './Meal';
+import type { User, WithCurrentUser } from './User';
 
 export type Item = {
   meal: Meal;
