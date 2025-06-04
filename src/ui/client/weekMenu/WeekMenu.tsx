@@ -1,21 +1,26 @@
-import { useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from 'src/state/store';
-import { useContainer } from 'src/ui/context/container';
+import { useStore } from 'src/state/useState';
 
 export const WeekMenu = () => {
-  const dispatch = useAppDispatch();
   const {
-    menuUseCases: { getThisWeekMenu },
-  } = useContainer();
-  const { menu, loading } = useAppSelector((state) => state.menu);
-
-  useEffect(() => {
-    dispatch(getThisWeekMenu());
-  }, [dispatch, getThisWeekMenu]);
+    data: { menu },
+    loading,
+  } = useStore('menu', 'getThisWeekMenu');
 
   if (loading) {
     return <div>Loading...</div>;
   }
 
-  return <div>TEST{menu?.name}</div>;
+  return (
+    <>
+      <div>TEST</div>
+      <div>{menu?.id}</div>
+      <div>{menu?.name}</div>
+      <div>{menu?.dateStart.toString()}</div>
+      <div>{menu?.dateEnd.toString()}</div>
+      <div>{menu?.protein}</div>
+      <div>{menu?.base}</div>
+      <div>{menu?.legumes}</div>
+      <div>{menu?.followUp}</div>
+    </>
+  );
 };

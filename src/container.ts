@@ -2,9 +2,11 @@ import { apiService } from 'src/infra/apiService';
 import { makeCreateMenu } from './useCases/menuUseCases';
 
 const menuUseCases = makeCreateMenu({ apiService });
+// const mealUseCases = { getMeal: () => {} };
 
 const container = {
-  menuUseCases,
+  ...menuUseCases,
+  // ...mealUseCases,
 };
 
 type Container = typeof container;

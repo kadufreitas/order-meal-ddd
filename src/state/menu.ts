@@ -14,9 +14,7 @@ const initialState: MenuState = {
   error: null,
 };
 
-const {
-  menuUseCases: { getThisWeekMenu },
-} = container;
+const { getThisWeekMenu } = container;
 
 const menuSlice = createSlice({
   name: 'menu',
